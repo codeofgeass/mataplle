@@ -8,9 +8,10 @@ for i=1:6570
     frame=im2bw(frame);
     lunkuo=bwperim(frame);
     lunkuo=imdilate(lunkuo,se);
-    imshow(lunkuo);
+    lunkuo=imresize(lunkuo,0.5);
+    %imshow(lunkuo);
     %生成帧图，路径可自由修改
-    %lujing=strcat('E:/CODE-MATLAB/lunkuo/',num2str(i));
-    %lujing=strcat(lujing,'.jpg');
-    %imwrite(lunkuo,lujing)
+    lujing=strcat('E:/mataple/lunkuo/',num2str(i));
+    lujing=strcat(lujing,'.jpg');
+    imwrite(lunkuo,lujing);
 end
